@@ -9,6 +9,8 @@ import HomePage from './pages/HomePage.jsx'
 import CharacterPage from './pages/CharacterPage.jsx'
 import AuthLayout from './layouts/AuthLayout.jsx'
 import AdminLayout from './layouts/AdminLayout.jsx'
+import MoviesPage from './pages/MoviesPage.jsx'
+import StudentsPage from './pages/StudentsPage.jsx'
 
 createRoot(document.getElementById('root')).render(
   <BrowserRouter>
@@ -16,6 +18,12 @@ createRoot(document.getElementById('root')).render(
       <Route element={<AdminLayout />}>
         <Route path='/' element={<HomePage />} />
         <Route path='/characters/:id' element={<CharacterPage />} />
+
+        {/* TODO: Crearla ruta movies y obtener el listado de peliculas desde supabase */}
+        <Route path='/movies' element={<MoviesPage />} />
+
+        {/* TODO: Crear la ruta students, esta debe lista los estudiantes con su nombre y un apellido. Para eso deben crear la tabla students en supabase y listar los datos en la ruta /students. */}
+        <Route path='/students' element={<StudentsPage />} />
       </Route>
 
       <Route element={<AuthLayout />}>
